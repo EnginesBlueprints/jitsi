@@ -15,12 +15,43 @@
         "level": "alpha",
         "patch": 0
       }
-    }
+    },
+    "timestamp": "2019-02-06T08:54:39+11:00"
   },
   "software": {
     "base": {
+      "name": "jitsi",
+      "framework": "openjdk8",
       "deployment_type": "web",
-      "http_protocol": "https_and_http"
-    }
+      "http_protocol": "https_and_http",
+      "memory": {
+        "required": 2048,
+        "recommended": 2048
+      }
+    },
+    "ports": [
+      {
+        "port": "10000-12000",
+        "external": "10000-12000",
+        "protocol": "udp"
+      }
+    ],
+    "scripts": {
+      "start": {
+        "language": "sh",
+        "content": "#!/bin/bash\r\n\r\nsleep 600"
+      }
+    },
+    "external_repositories": [
+      {
+        "source": "https://download.jitsi.org stable/",
+        "key": "https://download.jitsi.org/jitsi-key.gpg.key"
+      }
+    ],
+    "system_packages": [
+      {
+        "package": "jitsi-meet"
+      }
+    ]
   }
 }
