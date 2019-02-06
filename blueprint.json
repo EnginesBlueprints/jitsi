@@ -16,12 +16,13 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-02-06T09:20:41+11:00"
+    "timestamp": "2019-02-06T11:12:39+11:00"
   },
   "software": {
     "base": {
       "name": "jitsi",
-      "framework": "openjdk8",
+      "inherit": "https://raw.githubusercontent.com/EnginesBlueprints/prosody/master/blueprint.json",
+      "framework": "lua",
       "deployment_type": "web",
       "http_protocol": "https_and_http",
       "memory": {
@@ -50,7 +51,39 @@
     ],
     "system_packages": [
       {
-        "package": "jitsi-meet"
+        "package": "openjdk-8-jre-headless"
+      },
+      {
+        "package": "openjdk-8-jdk"
+      },
+      {
+        "package": "maven"
+      }
+    ],
+    "installed_packages": [
+      {
+        "name": "jitsi-videobridge-linux-x64-1106.zip",
+        "download_type": "http(s)",
+        "source_url": "https://download.jitsi.org/jitsi-videobridge/linux/jitsi-videobridge-linux-x64-1106.zip",
+        "destination": "/home/app/jitsi-videobridge-linux-x64-",
+        "extraction_command": "unzip ",
+        "path_to_extracted": "jitsi-videobridge-linux-x64-1106.zip"
+      },
+      {
+        "name": "jicofo",
+        "download_type": "git",
+        "source_url": "https://github.com/jitsi/jicofo.git",
+        "destination": "/home/app/jicofo",
+        "extraction_command": "git",
+        "path_to_extracted": "jicofo"
+      },
+      {
+        "name": "jitsi-meet",
+        "download_type": "git",
+        "source_url": "https://github.com/jitsi/jitsi-meet.git",
+        "destination": "/home/app/jitsi-meet",
+        "extraction_command": "git",
+        "path_to_extracted": "jitsi-meet.git"
       }
     ]
   }
