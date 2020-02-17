@@ -16,18 +16,18 @@
         "patch": 0
       }
     },
-    "timestamp": "2019-02-06T11:12:39+11:00"
+    "timestamp": "2020-02-17T17:42:15+11:00"
   },
   "software": {
     "base": {
       "name": "jitsi",
       "inherit": "https://raw.githubusercontent.com/EnginesBlueprints/prosody/master/blueprint.json",
-      "framework": "lua",
+      "framework": "openjdk11",
       "deployment_type": "web",
       "http_protocol": "https_and_http",
       "memory": {
-        "required": 2048,
-        "recommended": 2048
+        "required": 1500,
+        "recommended": 1500
       }
     },
     "ports": [
